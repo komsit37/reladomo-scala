@@ -1,0 +1,5 @@
+This repository includes portions of the following software:
+
+Reladomo
+Copyright 2016 Goldman Sachs
+Licensed under Apache 2.0 license
