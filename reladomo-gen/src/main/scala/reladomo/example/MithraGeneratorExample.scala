@@ -5,6 +5,8 @@ import com.gs.fw.common.mithra.generator.MithraGenerator
 //set working dir to reladomo-gen first
 object MithraGeneratorExample {
   def main(args: Array[String]): Unit = {
+    val thisModule = "reladomo-gen"
+    val targetModule = "reladomo-sample"
     val gen = new MithraGenerator() {
       override def log(s: String): Unit = {
         println(s)
@@ -16,9 +18,10 @@ object MithraGeneratorExample {
     }
     val startTime = System.currentTimeMillis
     //minimum required settings
-    gen.setGeneratedDir("target/java/src_unmanaged/main")
-    gen.setXml("src/main/resources/reladomo/models/ReladomoClassList.xml")
-    gen.setNonGeneratedDir("src/main/java")
+    gen.setXml(thisModule + "/src/main/resources/reladomo/models/ReladomoClassList.xml")
+
+    gen.setGeneratedDir(targetModule + "/target/java/src_unmanaged/main")
+    gen.setNonGeneratedDir(targetModule + "/src/main/java")
     gen.setGenerateGscListMethod(true)
 //    gen.setCodeFormat(CoreMithraGenerator.FORMAT_FAST)
 

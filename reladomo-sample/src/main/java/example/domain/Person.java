@@ -17,7 +17,6 @@ public class Person extends PersonAbstract
 		// You must not modify this constructor. Mithra calls this internally.
 		// You can call this constructor. You can also add new constructors.
 	}
-
 	public String getFullName()
 	{
 		return this.getFirstName() + " " + getLastName();

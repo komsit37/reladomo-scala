@@ -34,8 +34,10 @@ lazy val `reladomo-sample` = (project in file("reladomo-sample"))
   .settings(commonSettings)
   .settings(
     name := "reladomo-sample",
+    unmanagedSourceDirectories in Compile += target.value / "java" / "src_unmanaged" / "main",
     libraryDependencies ++= Seq(
-
+      "ch.qos.logback" % "logback-classic" % versions.logback,
+      "com.h2database" % "h2" % versions.h2,
       "com.goldmansachs.reladomo" % "reladomo" % versions.reladomo,
       "com.goldmansachs.reladomo" % "reladomo-test-util" % versions.reladomo % "test",
 
